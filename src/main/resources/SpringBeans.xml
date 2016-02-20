@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="oleksandr" class="com.yamkovyy.spring.di.Student">
+		<constructor-arg value="Oleksandr"/>
+	</bean>
+
+	<bean id="artem" class="com.yamkovyy.spring.di.Student">
+		<property name = "name" value = "Artem" />
+	</bean>
+	
+	<bean id="room830" class="com.yamkovyy.spring.di.Room">
+		<property name="students">
+		<list>
+			<ref bean="oleksandr"/>
+			<ref bean="artem"/>
+		</list>
+		</property>
+	</bean>
+</beans>
